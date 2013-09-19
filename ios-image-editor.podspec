@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'ios-image-editor'
-  s.version      = '1.1.1/'
+  s.version      = '1.1.1'
   s.summary      = "iOS View Controller for image cropping."
   s.homepage     = "https://github.com/heitorfr/ios-image-editor"
   s.author       = 'Heitor Ferreira'
