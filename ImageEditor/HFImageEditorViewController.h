@@ -27,7 +27,11 @@ typedef void(^HFImageEditorDoneCallback)(UIImage *image, BOOL canceled);
 
 @property(nonatomic,readonly) CGRect cropBoundsInSourceImage;
 
+@property (nonatomic,retain) IBOutlet UIView<HFImageEditorFrame> *frameView;
+
 - (void)reset:(BOOL)animated;
+- (IBAction)doneAction:(id)sender;
+- (IBAction)cancelAction:(id)sender;
 
 @end
 

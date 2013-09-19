@@ -16,8 +16,6 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
 @property (retain, nonatomic) IBOutlet UIRotationGestureRecognizer *rotationRecognizer;
 @property (retain, nonatomic) IBOutlet UIPinchGestureRecognizer *pinchRecognizer;
 @property (retain, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
-@property (nonatomic,retain) IBOutlet UIView<HFImageEditorFrame> *frameView;
-
 
 @property(nonatomic,assign) NSUInteger gestureCount;
 @property(nonatomic,assign) CGPoint touchCenter;
