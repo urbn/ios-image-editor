@@ -1,11 +1,11 @@
 #import "HFImageEditorViewController+SubclassingHooks.h"
-#import "DemoImageEditor.h"
+#import "DemoImageEditorWithNib.h"
 
-@interface DemoImageEditor ()
+@interface DemoImageEditorWithNib ()
 
 @end
 
-@implementation DemoImageEditor
+@implementation DemoImageEditorWithNib
 
 @synthesize  saveButton = _saveButton;
 
@@ -24,6 +24,10 @@
 {
     [_saveButton release];
     [super dealloc];
+}
+
+- (NSString *)nibName {
+    return @"DemoImageEditorWithNib";
 }
 
 - (void)viewDidUnload

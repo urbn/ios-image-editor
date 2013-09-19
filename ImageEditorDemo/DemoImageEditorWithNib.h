@@ -1,6 +1,6 @@
 #import "HFImageEditorViewController.h"
 
-@interface DemoImageEditor : HFImageEditorViewController
+@interface DemoImageEditorWithNib : HFImageEditorViewController
 
 @property(nonatomic,retain) IBOutlet UIBarButtonItem *saveButton;
 

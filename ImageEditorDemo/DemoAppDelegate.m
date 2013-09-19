@@ -1,9 +1,12 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "DemoAppDelegate.h"
-#import "DemoImageEditor.h"
+#import "DemoImageEditorWithNib.h"
+#import "DemoImageEditorWithoutNib.h"
+
+#define USE_NIB 1
 
 @interface DemoAppDelegate()
-@property(nonatomic,retain) DemoImageEditor *imageEditor;
+@property(nonatomic,retain) HFImageEditorViewController *imageEditor;
 @property(nonatomic,retain) ALAssetsLibrary *library;
 @end
 
@@ -24,7 +27,6 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
-    //if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     
     picker.allowsEditing = NO;
@@ -33,8 +35,10 @@
     self.window.rootViewController = picker;
     [picker release];
     
+    Class editorClass = USE_NIB ? [DemoImageEditorWithNib class] : [DemoImageEditorWithoutNib class];
+    
     self.library = [[[ALAssetsLibrary alloc] init] autorelease];
-    self.imageEditor = [[[DemoImageEditor alloc] initWithNibName:@"DemoImageEditor" bundle:nil] autorelease];
+    self.imageEditor = [[[editorClass alloc] init] autorelease];
     self.imageEditor.checkBounds = YES;
     
     self.imageEditor.doneCallback = ^(UIImage *editedImage, BOOL canceled){
