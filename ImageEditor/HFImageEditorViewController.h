@@ -3,6 +3,7 @@
 @protocol HFImageEditorFrame
 @required
 @property(nonatomic,assign) CGRect cropRect;
+@property (nonatomic,assign) BOOL useCircularImage;
 @end
 
 @class  HFImageEditorViewController;
